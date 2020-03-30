@@ -8,13 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KNThirdViewController : UIViewController
 
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *helpLabel;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *dismissButton;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *resizeButton;
+@property (weak, nonatomic) IBOutlet UILabel *helpLabel;
+@property (weak, nonatomic) IBOutlet UIButton *dismissButton;
+@property (weak, nonatomic) IBOutlet UIButton *resizeButton;
 
 - (IBAction)dismissButtonDidTouch:(id)sender;
 - (IBAction)resizeSemiModalView:(id)sender;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -1,8 +1,8 @@
 //
-//  KNModalTableViewController.h
+//  AppDelegate.h
 //  KNSemiModalViewControllerDemo
 //
-//  Created by Kent Nguyen on 4/5/12.
+//  Created by Kent Nguyen on 2/5/12.
 //  Copyright (c) 2012 Kent Nguyen. All rights reserved.
 //
 
@@ -10,7 +10,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface KNModalTableViewController : UITableViewController
+@interface AppDelegate : UIResponder
+<
+UIApplicationDelegate
+>
+
+@property (nullable, nonatomic, strong) UIWindow *window;
 
 @end
 

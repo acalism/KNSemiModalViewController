@@ -8,13 +8,18 @@
 
 #import "KNAboutViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 @interface KNAboutViewController ()
 
 @end
 
 @implementation KNAboutViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil
+                         bundle:(nullable NSBundle *)nibBundleOrNil
+{
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
   if (self) {
     self.title = @"About";
@@ -22,6 +27,17 @@
   }
   return self;
 }
+
+- (nullable instancetype)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
+  if (self) {
+    self.title = @"About";
+    self.tabBarItem.image = [UIImage imageNamed:@"second"];
+  }
+  return self;
+}
+
 
 -(IBAction)blogButtonDidTouch:(id)sender {
   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://kentnguyen.com/"]];
@@ -33,3 +49,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END

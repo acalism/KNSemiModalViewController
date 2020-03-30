@@ -8,6 +8,8 @@
 
 #import "KNModalTableViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KNModalTableViewController ()
 
 @end
@@ -38,7 +40,7 @@
   if (!cell) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  cell.textLabel.text = [NSString stringWithFormat:@"Crazy shit %d", indexPath.row];
+  cell.textLabel.text = [NSString stringWithFormat:@"Crazy shit %zd", indexPath.row];
   return cell;
 }
 
@@ -49,3 +51,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

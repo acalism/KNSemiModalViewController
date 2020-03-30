@@ -10,6 +10,10 @@
 #import "UIViewController+KNSemiModal.h"
 #import <QuartzCore/QuartzCore.h>
 
+
+NS_ASSUME_NONNULL_BEGIN
+
+
 @interface KNThirdViewController ()
 
 @end
@@ -28,12 +32,6 @@
   resizeButton.layer.masksToBounds  = YES;
 }
 
-- (void)viewDidUnload {
-  [self setHelpLabel:nil];
-  [self setDismissButton:nil];
-  [self setResizeButton:nil];
-  [super viewDidUnload];
-}
 
 - (IBAction)dismissButtonDidTouch:(id)sender {
 
@@ -54,3 +52,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

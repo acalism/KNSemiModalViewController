@@ -9,27 +9,36 @@
 #import "KNFirstViewController.h"
 #import "UIViewController+KNSemiModal.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KNFirstViewController ()
 
 @end
 
 @implementation KNFirstViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-      self.title = NSLocalizedString(@"First", @"First");
-      self.tabBarItem.image = [UIImage imageNamed:@"first"];
-    }
-    return self;
+- (nullable instancetype)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
+  if (self) {
+    self.title = NSLocalizedString(@"First", @"First");
+    self.tabBarItem.image = [UIImage imageNamed:@"first"];
+  }
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+  return self;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-      return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-  } else {
-      return YES;
+- (BOOL)shouldAutorotate {
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+  return YES;
+}
+
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+  if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPhone) {
+    return UIInterfaceOrientationMaskAllButUpsideDown;
   }
+  return UIInterfaceOrientationMaskAll;
 }
 
 - (IBAction)buttonDidTouch:(id)sender {
@@ -41,3 +50,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

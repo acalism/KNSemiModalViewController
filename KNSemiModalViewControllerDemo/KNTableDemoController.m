@@ -10,10 +10,13 @@
 #import "UIViewController+KNSemiModal.h"
 #import "KNModalTableViewController.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @implementation KNTableDemoController
 
-- (id)initWithStyle:(UITableViewStyle)style {
-  self = [super initWithStyle:style];
+- (nullable instancetype)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
   if (self) {
     self.title = @"Third";
     self.tabBarItem.image = [UIImage imageNamed:@"first"];
@@ -38,7 +41,7 @@
   if (!cell) {
     cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
-  cell.textLabel.text = [NSString stringWithFormat:@"Demo row %d", indexPath.row];
+  cell.textLabel.text = [NSString stringWithFormat:@"Demo row %zd", indexPath.row];
   return cell;
 }
 
@@ -49,9 +52,9 @@
 
   // You have to retain the ownership of ViewController that you are presenting
   [self presentSemiViewController:modalVC withOptions:@{
-		 KNSemiModalOptionKeys.pushParentBack : @(NO),
-		 KNSemiModalOptionKeys.parentAlpha : @(0.8)
-	 }];
+    KNSemiModalOptionKeys.pushParentBack : @(NO),
+    KNSemiModalOptionKeys.parentAlpha : @(0.8)
+  }];
   
   // The following code won't work
 //  KNModalTableViewController * vc = [[KNModalTableViewController alloc] initWithStyle:UITableViewStylePlain];
@@ -59,3 +62,5 @@
 }
 
 @end
+
+NS_ASSUME_NONNULL_END

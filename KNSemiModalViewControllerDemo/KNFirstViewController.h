@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface KNFirstViewController : UIViewController
 - (IBAction)buttonDidTouch:(id)sender;
 
 @end
+
+NS_ASSUME_NONNULL_END

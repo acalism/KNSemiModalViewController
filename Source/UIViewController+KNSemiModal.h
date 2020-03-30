@@ -3,6 +3,9 @@
 //  Created by YangMeyer on 08.10.12.
 //  Copyright (c) 2012 Yang Meyer. All rights reserved.
 //
+
+#import <UIKit/UIKit.h>
+
 @interface NSObject (YMOptionsAndDefaults)
 - (void)ym_registerOptions:(NSDictionary *)options
 				  defaults:(NSDictionary *)defaults;
@@ -45,7 +48,7 @@ extern const struct KNSemiModalOptionKeys {
     __unsafe_unretained NSString *backgroundView;     // UIView, custom background.
 } KNSemiModalOptionKeys;
 
-NS_ENUM(NSUInteger, KNSemiModalTransitionStyle) {
+typedef NS_ENUM(NSUInteger, KNSemiModalTransitionStyle) {
 	KNSemiModalTransitionStyleSlideUp,
 	KNSemiModalTransitionStyleFadeInOut,
 	KNSemiModalTransitionStyleFadeIn,

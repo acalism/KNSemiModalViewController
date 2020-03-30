@@ -8,9 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
+
 @interface KNAboutViewController : UIViewController
 
 -(IBAction)blogButtonDidTouch:(id)sender;
 -(IBAction)twitterButtonDidTouch:(id)sender;
 
 @end
+
+NS_ASSUME_NONNULL_END

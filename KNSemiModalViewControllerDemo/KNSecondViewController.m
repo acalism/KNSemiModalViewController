@@ -10,32 +10,43 @@
 #import "KNThirdViewController.h"
 #import "UIViewController+KNSemiModal.h"
 
+
+NS_ASSUME_NONNULL_BEGIN
+
+
 @implementation KNSecondViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-      self.title = @"Second";
-      self.tabBarItem.image = [UIImage imageNamed:@"second"];
 
-      // Take note that you need to take ownership of the ViewController that is being presented
-      semiVC = [[KNThirdViewController alloc] initWithNibName:@"KNThirdViewController" bundle:nil];
+- (nullable instancetype)initWithCoder:(NSCoder *)coder
+{
+  self = [super initWithCoder:coder];
+  if (self) {
+    self.title = @"Second";
+    self.tabBarItem.image = [UIImage imageNamed:@"second"];
 
-      // You can optionally listen to notifications
-      [[NSNotificationCenter defaultCenter] addObserver:self
-                                               selector:@selector(semiModalPresented:)
-                                                   name:kSemiModalDidShowNotification
-                                                 object:nil];
-      [[NSNotificationCenter defaultCenter] addObserver:self
-                                               selector:@selector(semiModalDismissed:)
-                                                   name:kSemiModalDidHideNotification
-                                                 object:nil];
-      [[NSNotificationCenter defaultCenter] addObserver:self
-                                               selector:@selector(semiModalResized:)
-                                                   name:kSemiModalWasResizedNotification
-                                                 object:nil];
-    }
-    return self;
+    // Take note that you need to take ownership of the ViewController that is being presented
+    semiVC = [[KNThirdViewController alloc] initWithNibName:@"KNThirdViewController" bundle:nil];
+
+    // You can optionally listen to notifications
+
+    NSNotificationCenter *nc = NSNotificationCenter.defaultCenter;
+
+    [nc addObserver:self
+           selector:@selector(semiModalPresented:)
+               name:kSemiModalDidShowNotification
+             object:nil];
+
+    [nc addObserver:self
+           selector:@selector(semiModalDismissed:)
+               name:kSemiModalDidHideNotification
+             object:nil];
+
+    [nc addObserver:self
+           selector:@selector(semiModalResized:)
+               name:kSemiModalWasResizedNotification
+             object:nil];
+  }
+  return self;
 }
 
 #pragma mark - Demo
@@ -75,3 +86,5 @@
   [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end
+
+NS_ASSUME_NONNULL_END
