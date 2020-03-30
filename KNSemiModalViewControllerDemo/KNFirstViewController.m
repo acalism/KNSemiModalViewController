@@ -19,12 +19,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable instancetype)initWithCoder:(NSCoder *)coder
 {
+  NSLog(@"%s", __PRETTY_FUNCTION__);
   self = [super initWithCoder:coder];
   if (self) {
     self.title = NSLocalizedString(@"First", @"First");
     self.tabBarItem.image = [UIImage imageNamed:@"first"];
   }
-  NSLog(@"%s", __PRETTY_FUNCTION__);
   return self;
 }
 

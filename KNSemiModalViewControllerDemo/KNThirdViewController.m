@@ -19,17 +19,16 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @implementation KNThirdViewController
-@synthesize helpLabel;
-@synthesize dismissButton;
-@synthesize resizeButton;
 
-- (void)viewDidLoad {
+
+- (void)viewDidLoad
+{
   [super viewDidLoad];
   
-  dismissButton.layer.cornerRadius  = 10.0f;
-  dismissButton.layer.masksToBounds = YES;
-  resizeButton.layer.cornerRadius   = 10.0f;
-  resizeButton.layer.masksToBounds  = YES;
+  self.dismissButton.layer.cornerRadius  = 10.0f;
+  self.dismissButton.layer.masksToBounds = YES;
+  self.resizeButton.layer.cornerRadius   = 10.0f;
+  self.resizeButton.layer.masksToBounds  = YES;
 }
 
 
@@ -44,7 +43,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 }
 
-- (IBAction)resizeSemiModalView:(id)sender {
+- (IBAction)resizeSemiModalView:(id)sender
+{
   UIViewController * parent = [self.view containingViewController];
   if ([parent respondsToSelector:@selector(resizeSemiView:)]) {
     [parent resizeSemiView:CGSizeMake(320, arc4random() % 280 + 180)];

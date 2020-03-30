@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (nullable instancetype)initWithCoder:(NSCoder *)coder
 {
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+
   self = [super initWithCoder:coder];
   if (self) {
     self.title = @"Third";

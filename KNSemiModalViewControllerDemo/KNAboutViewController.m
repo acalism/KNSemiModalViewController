@@ -17,19 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KNAboutViewController
 
-- (instancetype)initWithNibName:(nullable NSString *)nibNameOrNil
-                         bundle:(nullable NSBundle *)nibBundleOrNil
-{
-  self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-  if (self) {
-    self.title = @"About";
-    self.tabBarItem.image = [UIImage imageNamed:@"second"];
-  }
-  return self;
-}
-
 - (nullable instancetype)initWithCoder:(NSCoder *)coder
 {
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+
   self = [super initWithCoder:coder];
   if (self) {
     self.title = @"About";

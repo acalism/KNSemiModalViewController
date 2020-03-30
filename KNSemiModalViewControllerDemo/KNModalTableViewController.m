@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @implementation KNModalTableViewController
 
-- (id)initWithStyle:(UITableViewStyle)style {
+- (instancetype)initWithStyle:(UITableViewStyle)style
+{
+  NSLog(@"%s", __PRETTY_FUNCTION__);
+
   self = [super initWithStyle:style];
   if (self) {
     self.view.frame = CGRectMake(0, 0, 320, 200);

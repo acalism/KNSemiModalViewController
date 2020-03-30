@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(nullable NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions
 {
-  NSLog(@"%s", __PRETTY_FUNCTION__);
+  NSLog(@"%s, self.window = %@", __PRETTY_FUNCTION__, self.window);
   return YES;
 }
 
@@ -34,9 +34,9 @@ NS_ASSUME_NONNULL_BEGIN
 {
   NSLog(@"%s", __PRETTY_FUNCTION__);
 
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+  // Called when a new scene session is being created.
+  // Use this method to select a configuration to create the new scene with.
+  return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
 }
 
 
@@ -44,9 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 {
   NSLog(@"%s", __PRETTY_FUNCTION__);
 
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+  // Called when the user discards a scene session.
+  // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
+  // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
 }
 
 @end
