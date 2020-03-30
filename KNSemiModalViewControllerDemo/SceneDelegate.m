@@ -2,6 +2,8 @@
 
 #import "AppDelegate.h"
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface SceneDelegate ()
 
 @end
@@ -15,7 +17,7 @@
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-  NSLog(@"%s", __PRETTY_FUNCTION__);
+  NSLog(@"%s, self.window = %@", __PRETTY_FUNCTION__, self.window);
 
     //[AppDelegate configureWindow:self.window];
 
@@ -70,3 +72,5 @@
 
 
 @end
+
+NS_ASSUME_NONNULL_END
