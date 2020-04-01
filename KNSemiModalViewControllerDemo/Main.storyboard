@@ -145,7 +145,7 @@ IN SLO-MO!!!
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dna-xR-z2s">
-                                <rect key="frame" x="130" y="763" width="154" height="30"/>
+                                <rect key="frame" x="137.5" y="763" width="139" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Open Custom View">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -166,7 +166,7 @@ IN SLO-MO!!!
                             <constraint firstItem="MJN-gm-Eir" firstAttribute="centerX" secondItem="GSa-Y8-dS4" secondAttribute="centerX" id="b9f-II-KOk"/>
                             <constraint firstItem="GSa-Y8-dS4" firstAttribute="bottom" secondItem="dna-xR-z2s" secondAttribute="bottom" constant="20" id="rKb-Dv-lDp"/>
                             <constraint firstItem="MQp-GZ-N9h" firstAttribute="centerX" secondItem="GSa-Y8-dS4" secondAttribute="centerX" id="s28-8h-YtC"/>
-                            <constraint firstItem="dna-xR-z2s" firstAttribute="leading" secondItem="GSa-Y8-dS4" secondAttribute="leading" constant="130" id="srr-OV-BJ0"/>
+                            <constraint firstItem="dna-xR-z2s" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GSa-Y8-dS4" secondAttribute="leading" constant="20" id="srr-OV-BJ0"/>
                             <constraint firstItem="dna-xR-z2s" firstAttribute="centerX" secondItem="GSa-Y8-dS4" secondAttribute="centerX" id="xIG-Ht-GLj"/>
                             <constraint firstItem="MJN-gm-Eir" firstAttribute="leading" secondItem="GSa-Y8-dS4" secondAttribute="leading" constant="101" id="zhp-XU-Fm2"/>
                         </constraints>

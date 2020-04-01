@@ -53,10 +53,12 @@ NS_ASSUME_NONNULL_BEGIN
   [tableView deselectRowAtIndexPath:indexPath animated:NO];
 
   // You have to retain the ownership of ViewController that you are presenting
-  [self presentSemiViewController:modalVC withOptions:@{
-    KNSemiModalOptionKeys.pushParentBack : @(NO),
-    KNSemiModalOptionKeys.parentAlpha : @(0.8)
-  }];
+  
+  KNSemiModalOption *option = KNSemiModalOption.new;
+  option.pushParentBack = false;
+  option.parentAlpha = 0.8;
+
+  [self kns_presentSemiViewController:modalVC withOptions:option];
   
   // The following code won't work
 //  KNModalTableViewController * vc = [[KNModalTableViewController alloc] initWithStyle:UITableViewStylePlain];

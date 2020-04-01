@@ -56,11 +56,11 @@ NS_ASSUME_NONNULL_BEGIN
 
   // You can also present a UIViewController with complex views in it
   // and optionally containing an explicit dismiss button for semi modal
-  [self presentSemiViewController:semiVC withOptions:@{
-		 KNSemiModalOptionKeys.pushParentBack    : @(YES),
-		 KNSemiModalOptionKeys.animationDuration : @(2.0),
-		 KNSemiModalOptionKeys.shadowOpacity     : @(0.3),
-	 }];
+  KNSemiModalOption *option = KNSemiModalOption.new;
+  option.pushParentBack = true;
+  option.animationDuration = 2.0;
+  option.shadowOpacity = 0.3;
+  [self kns_presentSemiViewController:semiVC withOptions:option];
 
 }
 

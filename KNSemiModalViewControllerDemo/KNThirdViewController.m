@@ -36,18 +36,18 @@ NS_ASSUME_NONNULL_BEGIN
 
   // Here's how to call dismiss button on the parent ViewController
   // be careful with view hierarchy
-  UIViewController * parent = [self.view containingViewController];
-  if ([parent respondsToSelector:@selector(dismissSemiModalView)]) {
-    [parent dismissSemiModalView];
+  UIViewController * parent = [self.view kns_containingViewController];
+  if ([parent respondsToSelector:@selector(kns_dismissSemiModalView)]) {
+    [parent kns_dismissSemiModalView];
   }
 
 }
 
 - (IBAction)resizeSemiModalView:(id)sender
 {
-  UIViewController * parent = [self.view containingViewController];
-  if ([parent respondsToSelector:@selector(resizeSemiView:)]) {
-    [parent resizeSemiView:CGSizeMake(320, arc4random() % 280 + 180)];
+  UIViewController * parent = [self.view kns_containingViewController];
+  if ([parent respondsToSelector:@selector(kns_resizeSemiView:)]) {
+    [parent kns_resizeSemiView:CGSizeMake(320, arc4random() % 280 + 180)];
   }
 }
 

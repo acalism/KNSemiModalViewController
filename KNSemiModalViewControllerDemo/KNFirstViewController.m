@@ -46,7 +46,20 @@ NS_ASSUME_NONNULL_BEGIN
   // without needing to take care of dismiss action
   UIImageView * imagev = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"temp.jpg"]];
   UIImageView * bgimgv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"background_01"]];
-  [self presentSemiView:imagev withOptions:@{ KNSemiModalOptionKeys.backgroundView:bgimgv }];
+
+  KNSemiModalOption *option = KNSemiModalOption.new;
+  option.backgroundView = bgimgv;
+  option.parentAlpha = 0.5;
+  option.parentScale = 1.0;
+  option.pushParentBack = false;
+  option.shadowOpacity = 0;
+  option.transitionStyle = KNSemiModalTransitionStyleSlideUp;
+  option.traverseParentHierarchy = true;
+  option.animationDuration = 0.3;
+  option.allowTapToDismiss = true;
+  option.viewPosition = KNSemiModalViewPositionBottom;
+
+  [self kns_presentSemiView:imagev withOptions:option];
 }
 
 @end
